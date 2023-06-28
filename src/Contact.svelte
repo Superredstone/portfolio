@@ -1,14 +1,10 @@
 <script lang="ts">
 	import {
 		IconBrandDiscord,
-		IconBrandDiscordFilled,
 		IconBrandGithub,
-		IconBrandGithubFilled,
 		IconBrandTwitter,
-		IconBrandTwitterFilled,
 		IconLoader,
 	} from "@tabler/icons-svelte";
-	import { link } from "svelte-spa-router";
 
 	let sendingEmail = false;
 
