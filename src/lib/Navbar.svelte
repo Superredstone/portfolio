@@ -1,5 +1,11 @@
-<script>
+<script lang="ts">
 	import { link } from "svelte-spa-router";
+
+	export let current_page: string;
+
+	function navitemsClass(): string {
+		return "current-page nav-item";
+	}
 </script>
 
 <nav>
@@ -7,8 +13,28 @@
 		<a href="#/" use:link class="home-button">Patrick Canal</a>
 	</h1>
 	<div class="nav-items">
-		<a href="/" use:link>About me</a>
-		<a href="/contact" use:link>Contact</a>
+		<input type="checkbox" id="navbar-toggle" />
+		<label for="navbar-toggle" class="hamburger">&#9776;</label>
+
+		<div class="menu">
+			<a
+				href="/"
+				use:link
+				class={current_page === "/" ? navitemsClass() : "nav-item"}>About me</a
+			>
+			<a
+				href="/projects"
+				use:link
+				class={current_page === "/projects" ? navitemsClass() : "nav-item"}
+				>Projects</a
+			>
+			<a
+				href="/contact"
+				use:link
+				class={current_page === "/contact" ? navitemsClass() : "nav-item"}
+				>Contact</a
+			>
+		</div>
 	</div>
 </nav>
 
@@ -24,6 +50,47 @@
 		font-size: 1.8rem;
 	}
 
+	input[type="checkbox"] {
+		display: none;
+	}
+
+	.hamburger {
+		display: none;
+		font-size: 24px;
+		user-select: none;
+	}
+
+	.menu > a {
+		padding-left: 20px;
+	}
+
+	@media (max-width: 800px) {
+		.menu {
+			display: none;
+			position: absolute;
+			background-color: var(--secondary);
+			right: 0;
+			left: 0;
+			margin-top: 20px;
+			text-align: center;
+			padding: 16px 0;
+			opacity: 0%;
+			z-index: 100;
+			transition: all 0.25s;
+		}
+
+		input[type="checkbox"]:checked ~ .menu {
+			display: flex;
+			flex-direction: column;
+			opacity: 100%;
+			gap: 50px;
+		}
+
+		.hamburger {
+			display: block;
+		}
+	}
+
 	a {
 		text-decoration: none;
 		color: var(--text);
@@ -32,11 +99,10 @@
 
 	a:hover {
 		color: var(--primary);
-		transform: translateY(10px);
 	}
 
-	.nav-items > a {
-		margin-left: 30px;
+	.current-page {
+		color: var(--primary);
 	}
 
 	.home-button {

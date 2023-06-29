@@ -9,20 +9,20 @@
 		IconBrandReact,
 		IconBrandSvelte,
 		IconBrandVue,
+		IconBrandNextjs,
+		IconBrandNuxt,
 	} from "@tabler/icons-svelte";
 </script>
 
 <main>
 	<h1 class="title">$ whoami</h1>
 	<p>
-		I'm an Italian <span class="emoji">🇮🇹</span> boy who has loved programming
-		since he was 12, <br /> I love experimenting with new technologies.<span
-			class="emoji">🤖</span
-		>
+		I'm an Italian boy who has loved programming since he was 12, <br /> I love
+		experimenting with new technologies.<span class="emoji">🤖</span>
 	</p>
 	<div class="lists">
 		<div class="list1">
-			<h2>Programming languages:</h2>
+			<h2>Technologies I know:</h2>
 			<ul>
 				<li>Javascript <IconBrandJavascript /></li>
 				<li>Rust <IconBrandRust /></li>
@@ -35,11 +35,11 @@
 		<div class="list2">
 			<h2>Javascript frameworks I know:</h2>
 			<ul>
-				<li>React <IconBrandReact /></li>
+				<li>React <IconBrandReact /> / NextJS <IconBrandNextjs /></li>
 				<li>
-					Svelte <IconBrandSvelte class="icon" />
+					Svelte <IconBrandSvelte /> / SvelteKit <IconBrandSvelte />
 				</li>
-				<li>Vue <IconBrandVue /></li>
+				<li>Vue <IconBrandVue /> / Nuxt <IconBrandNuxt /></li>
 			</ul>
 		</div>
 	</div>
@@ -66,7 +66,7 @@
 		}
 	}
 
-	.title {
+	:global(.title) {
 		white-space: nowrap;
 	}
 
