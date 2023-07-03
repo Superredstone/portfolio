@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Router, { location, link } from "svelte-spa-router";
+	import Router, { location, link, wrap } from "svelte-spa-router";
 	import Home from "./Home.svelte";
 	import Navbar from "./lib/Navbar.svelte";
 	import Footer from "./lib/Footer.svelte";
@@ -14,7 +14,7 @@
 	let routes = {
 		"/": Home,
 		"/home": Home,
-		"/projects": Projects,
+		"/projects/*": Projects,
 		"/contact": Contact,
 	};
 </script>

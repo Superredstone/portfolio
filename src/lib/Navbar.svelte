@@ -10,7 +10,7 @@
 
 <nav>
 	<h1>
-		<a href="#/" use:link class="home-button">Patrick Canal</a>
+		<a href="/" use:link class="home-button">Patrick Canal</a>
 	</h1>
 	<div class="nav-items">
 		<input type="checkbox" id="navbar-toggle" />
@@ -23,7 +23,7 @@
 				class={current_page === "/" ? navitemsClass() : "nav-item"}>About me</a
 			>
 			<a
-				href="/projects"
+				href="/projects/"
 				use:link
 				class={current_page === "/projects" ? navitemsClass() : "nav-item"}
 				>Projects</a
